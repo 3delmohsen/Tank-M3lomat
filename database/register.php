@@ -1,74 +1,65 @@
-<html>  
-<head>  
-<title>Register</title>  
-    <style>   
-        body{  
-    margin-top: 100px;  
-    margin-bottom: 100px;  
-    margin-right: 150px;  
-    margin-left: 80px;  
-    background-color: azure ;  
-    color: palevioletred;  
-    font-family: verdana;  
-    font-size: 100%  
-      
-        }  
-            h1 {  
-    color: indigo;  
-    font-family: verdana;  
-    font-size: 100%;  
-}  
-         h2 {  
-    color: indigo;  
-    font-family: verdana;  
-    font-size: 100%;  
-}</style>  
-</head>  
-<body>  
-     
-    <center><h1>CREATE REGISTRATION AND LOGIN FORM USING PHP AND MYSQL</h1></center>  
-   <p><a href="register.php">Register</a> | <a href="login.php">Login</a></p>  
-    <center><h2>Registration Form</h2></center>  
-<form action="" method="POST">  
-    <legend>  
-    <fieldset>  
-          
-Username: <input type="text" name="user"><br />  
-Password: <input type="password" name="pass"><br />   
-<input type="submit" value="Register" name="submit" />  
-              
-        </fieldset>  
-        </legend>  
-</form>  
-<?php  
-if(isset($_POST["submit"])){  
-if(!empty($_POST['user']) && !empty($_POST['pass'])) {  
-    $user=$_POST['user'];  
-    $pass=$_POST['pass'];  
-    $con=mysql_connect('localhost','root','') or die(mysql_error());  
-    mysql_select_db('user_registration') or die("cannot select DB");  
-  
-    $query=mysql_query("SELECT * FROM login WHERE username='".$user."'");  
-    $numrows=mysql_num_rows($query);  
-    if($numrows==0)  
-    {  
-    $sql="INSERT INTO login(username,password) VALUES('$user','$pass')";  
-  
-    $result=mysql_query($sql);  
-        if($result){  
-    echo "Account Successfully Created";  
-    } else {  
-    echo "Failure!";  
-    }  
-  
-    } else {  
-    echo "That username already exists! Please try again with another.";  
-    }  
-  
-} else {  
-    echo "All fields are required!";  
-}  
-}  
-?>  
-</body>  
+<?php
+ include_once 'config.php';
+
+ if(isset($_POST['send'])){
+     $first_name=$_POST['first_name'];
+     $last_name=$_POST['last_name'];
+     $Email=$_POST['Email'];
+     $confirm_email=$_POST['confirm_email'];
+     $password=$_POST['password'];
+     $confirm_password=$_POST['confirm_password'];
+
+     echo "$first_name";
+
+      $sql="INSERT INTO sigin_up(first_name,last_name,Email,confirm_email,paassword,confirm_password)VALUES('$first_name','$last_name','$Email','$confirm_email','$password','$confirm_password') ";
+      $result=mysqli_query($connect,$sql);
+      if($result){
+        header("location: ../index.php" );
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/all.css"/>
+</head>
+<body> 
+<div  class="SginUp">
+    <form method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1">first Name</label>
+            <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="first Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Confirm Email</label>
+            <input type="email" name="confirm_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm Email">
+            </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+        </div>
+        <center> <input type="submit" class="btn btn-primary" name="send" value="send"></center>
+    </form>
+</div>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/all.js"></script>   
+</body>
 </html>
