@@ -26,8 +26,8 @@ while($row=mysqli_fetch_assoc($reslt)){
           <img style="float: left; margin: auto;" src="imge/demo-store-logo-1542776272.png" alt="">
        </div>
        <div class="col">
-        <form action="database/login.php"> <input type="submit" value="login">    </form>
-        <form action="database/register.php"> <input type="submit" value="register">    </form>
+        <form action="database/sign_in.php"> <input type="submit" value="login">    </form>
+        <form action="database/Sign_Up.php"> <input type="submit" value="register">    </form>
      </div>
     </div>
   </div>
