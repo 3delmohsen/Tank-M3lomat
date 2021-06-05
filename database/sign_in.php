@@ -32,11 +32,11 @@
     <link rel="stylesheet" href="../css/all.css"/>
     <link rel="stylesheet" href="../css/loginform.css"/>
 </head>
-<body> 
+<body style="background-color:#FFFAD8;" > 
 <div  class="SginUp">
-    <form method="POST">
+    <form calass="for" method="POST">
             <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
+            <label class="down" for="exampleInputEmail1">Email</label>
             <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
             </div>
         <div class="form-group">
