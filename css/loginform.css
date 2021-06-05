@@ -1,8 +1,20 @@
 .SginUp{
-   border: 5px solid #FFFF00;
-   text-align: center;
-    width: 50%;
+   top:  10%;
+   margin: auto;
+  width: 50%;
+  border: 0px solid ;
+  padding: 10px;
+   margin-top: 10%;
+    height: 80% ;
+    background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 
 }
-.bot{
-    background-color: darkorange;
+
+
+.form-group{
+    padding-top: 30px;
 }
