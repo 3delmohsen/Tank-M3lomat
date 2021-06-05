@@ -26,8 +26,11 @@ while($row=mysqli_fetch_assoc($reslt)){
           <img style="float: left; margin: auto;" src="imge/demo-store-logo-1542776272.png" alt="">
        </div>
        <div class="col">
-        <form action="database/sign_in.php"> <input type="submit" value="login">    </form>
-        <form action="database/Sign_Up.php"> <input type="submit" value="register">    </form>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+
      </div>
     </div>
   </div>
@@ -74,13 +77,12 @@ while($row=mysqli_fetch_assoc($reslt)){
               <li><a class="dropdown-item" href="#">Entertainment</a></li>
               <li><a class="dropdown-item" href="#">Parenting</a></li>
             </ul>
-          </li>
-            <li><form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-            </li>
+          </li> 
         </ul>
+        <div class="log-in">
+              <a href="database/sign_in.php"><button class="btn btn-primary  ">Login</button></a>
+              <a href="database/Sign_Up.php"><button class="btn btn-primary">Register</button></a>
+        </div>  
       </div>
     </div>
   </nav>
