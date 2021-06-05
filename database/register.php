@@ -27,37 +27,34 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/all.css"/>
+    <link rel="stylesheet" href="../css/register.css"/>
 </head>
-<body> 
-<div  class="SginUp">
+<body class="head">
+     
+<div class="SginUp">
     <form method="POST">
         <div class="form-group">
-            <label for="exampleInputEmail1">first Name</label>
-            <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="first Name">
-        </div>
+            <input  type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="first Name">
+            </div>
+
         <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
             <input type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
             </div>
-            <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
+            
+        <div class="form-group">
             <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
             </div>
-            <div class="form-group">
-            <label for="exampleInputEmail1">Confirm Email</label>
-            <input type="email" name="confirm_email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm Email">
-            </div>
+
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Confirm Password</label>
-            <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
-        </div>
-        <center> <input type="submit" class="btn btn-primary" name="send" value="send"></center>
+         <br>
+         
+
+        <input class="submit" type="submit" class="btn btn-primary" name="send" value="send"> 
     </form>
 </div>
+
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/popper.js"></script>
     <script src="../js/all.js"></script>   

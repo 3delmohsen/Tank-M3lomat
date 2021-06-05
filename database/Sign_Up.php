@@ -39,30 +39,33 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/all.css"/>
+    <link rel="stylesheet" href="../css/register.css"/>
 </head>
 <body> 
+
 <div  class="SginUp">
+    
     <form method="POST">
         <div class="form-group">
-            <label for="exampleInputEmail1">first Name</label>
-            <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="first Name">
+            
+            <input class="a" type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  first Name">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+            
+            <input class="a" type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Last Name">
             </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+            
+            <input class="a" type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Email">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            
+            <input class="a" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="  Password">
         </div>
-        <center>
+        <center class="submit">
         <input type="submit" class="btn btn-primary" name="send" value="Sign Up">
         <!-- <a href="#"><button class="btn btn-primary"> Sign in </button></a> -->
-        </scenter>
+        </center>
     </form>
 </div>
     <script src="../js/bootstrap.min.js"></script>
