@@ -46,7 +46,7 @@
         <a href="sign_Up.php"><button class="btn btn-primary"> Sign Up </button></a>
         <input type="submit" class="btn btn-primary" name="send" value="Sign in">
         
-        </scenter>
+        </center>
     </form>
 </div>
     <script src="../js/bootstrap.min.js"></script>
