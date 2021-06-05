@@ -1,6 +1,7 @@
-.a{
+.SginUp{
    border: 5px solid #FFFF00;
-text-align: center;
+   text-align: center;
+    width: 50%;
 }
 .bot{
     background-color: darkorange;

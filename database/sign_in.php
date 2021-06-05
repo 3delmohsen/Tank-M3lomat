@@ -30,6 +30,7 @@
     <title>Sign In</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/all.css"/>
+    <link rel="stylesheet" href="../css/loginform.css"/>
 </head>
 <body> 
 <div  class="SginUp">
@@ -51,6 +52,7 @@
 </div>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/popper.js"></script>
-    <script src="../js/all.js"></script>   
+    <script src="../js/all.js"></script> 
+   
 </body>
 </html>
