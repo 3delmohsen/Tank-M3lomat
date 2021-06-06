@@ -55,7 +55,7 @@
                          <input type="submit" name="send" value="Sign Up">
 						<br><br>
                         <p align="center" class="p" > already have an account
-                            <b> <a class="p" href="sign_in"> log in</a></b> 
+                            <b> <a class="p" href="sign_in.php"> log in</a></b> 
                         </p>
 
         
