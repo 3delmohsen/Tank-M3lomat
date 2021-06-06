@@ -34,42 +34,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/all.css"/>
-    <link rel="stylesheet" href="../css/register.css"/>
-</head>
-<body> 
 
-<div  class="SginUp">
-    
-    <form method="POST">
-        <div class="form-group">
-            
-            <input class="a" type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  first Name">
-        </div>
-        <div class="form-group">
-            
-            <input class="a" type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Last Name">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <?php include_once "nvbar.php" ?>
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form method="POST" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="first_name" id="name" placeholder="Your Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="last_name" id="name" placeholder="Your Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input type="email" name="email" id="email" placeholder="Your Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password"  name="password" id="pass" placeholder="Password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="send" id="signup" style="background-color: #f26522 !important;" class="form-submit" value="Register"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="imge/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="sign_in.php" class="signup-image-link">I am already member</a>
+                </div>
             </div>
-        <div class="form-group">
-            
-            <input class="a" type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Email">
         </div>
-        <div class="form-group">
-            
-            <input class="a" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="  Password">
-        </div>
-        <center class="submit">
-        <input type="submit" class="btn btn-primary" name="send" value="Sign Up">
-        <!-- <a href="#"><button class="btn btn-primary"> Sign in </button></a> -->
-        </center>
-    </form>
+    </section>
 </div>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.js"></script>
-    <script src="../js/all.js"></script>   
+
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
