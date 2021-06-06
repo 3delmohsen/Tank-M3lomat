@@ -25,34 +25,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign In</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../css/all.css"/>
-    <link rel="stylesheet" href="../css/loginform.css"/>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/signup.css">
 </head>
-<body style="background-color:#FFFAD8;" > 
-<div  class="SginUp">
-    <form calass="for" method="POST">
-            <div class="form-group">
-            <label class="down" for="exampleInputEmail1">Email</label>
-            <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+<body>
+<?php include_once "nvbar.php";?>
+<div class="main">
+    <!-- Sing in  Form -->
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="imge/signin-image.jpg" alt="sing up image"></figure>
+                    <a href="sign_up.php" class="signup-image-link">Create an account</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign In</h2>
+                    <form method="POST" class="register-form" id="login-form">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="email"  name="email" id="your_name" placeholder="Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password"  name="password" id="your_pass" placeholder="Password"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="send" id="signin" style="background-color: #f26522 !important;" class="form-submit" value="Log in"/>
+                        </div>
+                    </form>
+                    <div class="social-login">
+                        <span class="social-label">Or login with</span>
+                        <ul class="socials">
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <center>
-        <a href="sign_Up.php"><button class="btn btn-primary"> Sign Up </button></a>
-        <input type="submit" class="btn btn-primary" name="send" value="Sign in">
-        
-        </center>
-    </form>
+    </section>
+
 </div>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/popper.js"></script>
-    <script src="../js/all.js"></script> 
-   
+
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

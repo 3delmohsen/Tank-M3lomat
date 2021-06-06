@@ -318,5 +318,10 @@ body {
   background-color: #fff ;
   border-color: #fff;
 }
+.btn-primary:hover{
+  background-color: #fff;
+  color: black;
+}
+
 /* font-family: 'Poppins', sans-serif; */
 /* https://themevolty.com/Prestashop/1.7/MAYFZ/ps_book_142/en/3-books-store */
