@@ -1,38 +1,100 @@
-.sginup{ 
-    padding-top: 30px;
-    border-style:groove;
-    border-radius: 15px 50px;
-    width: 500px;
-    height: 500px;
-    margin-top: 150px;
-    margin-left: 550px;
-    background-color:;
-    
-}
-.form-group{
-    
-    display:inline-block;
-    width: 240px;
-    padding-left: 30px;
-    padding-right: 10px;
-    padding-top: 80px; 
+body {
+    background-color: #FFFCE9;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  h1 {
+    padding-top: 20px;
+    font-size: 1.4cm;
+    text-align: center;
+    font-weight: 100;
+    z-index: 1;
     
   }
-.submit{
-    margin-top: 30px;
-}
-.a{
-    
-    border-style:groove;
-    border-radius: 20px 50px;
-    border-left: 6px solid #FCAE4A;
-    border-bottom: 6px solid #FCAE4A;
+  .main {
+      padding-left: 7px;
+      padding-top: 20px;
+    width: 30%;
+    margin: 3em auto;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+  }
+  
+  .top {
+    padding: 3em;
+  }
+  
+  .text {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
     outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 37px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .un:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) 
+    !important;
+    
+}
+
+  
+  input[type="submit"] {
+    cursor: pointer;
+    border-radius: 5em;
+    color: rgb(253, 253, 253);
+    background: linear-gradient(to right, #ffd000, #ffc400);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 28%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+.p{
+    color:#ffd000 ;
 }
 
 
 
+  
 
-
-
-
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

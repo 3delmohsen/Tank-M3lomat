@@ -41,32 +41,29 @@
     <link rel="stylesheet" href="../css/all.css"/>
     <link rel="stylesheet" href="../css/register.css"/>
 </head>
-<body> 
+<body class="all"> 
 
-<div  class="SginUp">
+<div class="main">
+	<div class="top">
     
-    <form method="POST">
-        <div class="form-group">
+     <form method="POST">
+        <input class="text" type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="first Name">
+        <input class="text" type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+        <input class="text" type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+        <input class="text" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                         <br>
+                         <input type="submit" name="send" value="Sign Up">
+						<br><br>
+                        <p align="center" class="p" > already have an account
+                            <b> <a class="p" href="sign_in"> log in</a></b> 
+                        </p>
+
+        
             
-            <input class="a" type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  first Name">
-        </div>
-        <div class="form-group">
-            
-            <input class="a" type="text" name="last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Last Name">
-            </div>
-        <div class="form-group">
-            
-            <input class="a" type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Email">
-        </div>
-        <div class="form-group">
-            
-            <input class="a" type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="  Password">
-        </div>
-        <center class="submit">
-        <input type="submit" class="btn btn-primary" name="send" value="Sign Up">
         <!-- <a href="#"><button class="btn btn-primary"> Sign in </button></a> -->
-        </center>
-    </form>
+        
+     </form>
+    </div>
 </div>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/popper.js"></script>
