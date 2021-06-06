@@ -1,4 +1,11 @@
+ body {
+        background-color: #FFFAD8;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+
 .SginUp{
+    border: px; 
    top:  10%;
    margin: auto;
   width: 50%;
@@ -15,6 +22,8 @@
 }
 
 
-.form-group{
-    padding-top: 30px;
+.form-group1{
+   
+    
 }
+
