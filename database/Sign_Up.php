@@ -9,7 +9,7 @@
 
      if(empty($first_name)||empty($last_name)||empty($email)||empty($password)){
 
-        echo "<h1>اكتب اي حاجه يستا  </h1>";
+        echo "<p>invalid input!</p>";
 
      }else{
          $sql1="SELECT email  FROM sigin_up WHERE email='$email'";
@@ -19,8 +19,10 @@
         if($count<1){
         echo "$count";
         $sql="INSERT INTO sigin_up(first_name,last_name,email,paassword)VALUES('$first_name','$last_name','$email','$password')";
+        $newuser="ALTER TABLE cartnum ADD $first_name varchar(225) not null ";      
         $result=mysqli_query($connect,$sql);
-          if($result){
+            $newuser=mysqli_query($connect,$newuser);
+          if($result||$newuser){
             header("location: sign_in.php" );
         }
         }else{
