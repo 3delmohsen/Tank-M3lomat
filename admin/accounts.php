@@ -100,7 +100,7 @@ $data[]=$row;
                     name="send"
                     class="btn btn-primary btn-block text-uppercase"
                   >
-                    edit Account
+                    Add Account
                   </button>
                 </div>
               </form>

@@ -1,7 +1,5 @@
 <?php
-    
-     include_once 'database/config.php';
-
+include_once 'database/config.php';
  if(isset($_POST['sub'])){
      $fullname=$_POST['firstname'];
      $email=$_POST['email'];

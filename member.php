@@ -171,12 +171,12 @@ if ($submitbutton){
                   <div class="h-bg-inner"></div>
                 </div>
 
-                <a class="cart" href="#">
+                <a class="cart" href="?id=<?php echo $table['id'] ?>">
                   <span class="price"><?php $_SESSION['price']=$table['price'] ;
                                    echo $_SESSION['price'];    ?></span>
-                  <form class="add-to-cart" method="post">
-                    <input class="txt" type="submit" value="Add in cart" name="addtocart" >
-                  </form>
+                  <span class="add-to-cart">
+                    <span class="txt" >Add in cart</span>
+                  </span>
                 </a>
               </div>
             </div>

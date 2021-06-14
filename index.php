@@ -134,10 +134,10 @@ while($row=mysqli_fetch_assoc($reslt)){
                   <div class="h-bg-inner"></div>
                 </div>
 
-                <a class="cart" href="#">
+                <a class="cart" href="database/sign_in.php">
                   <span class="price"><?php echo $table['price'] ?></span>
                   <span class="add-to-cart">
-                    <span class="txt">Add in cart</span>
+                    <span class="txt" >Add in cart</span>
                   </span>
                 </a>
               </div>
