@@ -19,10 +19,10 @@
         if($count<1){
         echo "$count";
         $sql="INSERT INTO sigin_up(first_name,last_name,email,paassword)VALUES('$first_name','$last_name','$email','$password')";
-        $newuser="ALTER TABLE cartnum ADD $first_name varchar(225) not null ";      
+             
         $result=mysqli_query($connect,$sql);
-            $newuser=mysqli_query($connect,$newuser);
-          if($result||$newuser){
+            
+          if($result){
             header("location: sign_in.php" );
         }
         }else{
