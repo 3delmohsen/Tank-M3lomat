@@ -82,7 +82,7 @@
     <center>
      <img src="imge/out.png"  usemap="#workmap">
     <map name="workmap">
-  <area shape="rect" coords="584,323,356,376"  href="index.php">
+  <area shape="rect" coords="584,323,356,376"  href="member.php">
  
    </map>
     </center>

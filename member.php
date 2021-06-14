@@ -1,4 +1,7 @@
 <?php
+session_start();
+//echo "hello"   . $_SESSION['userid'] ;
+
 include_once 'database/config.php';
 $sql="SELECT * FROM tablenew ";
 $reslt=mysqli_query($connect,$sql);
@@ -6,14 +9,25 @@ while($row=mysqli_fetch_assoc($reslt)){
   $data[]=$row;
 }
 
-$cart="select * from cartnum ";
+$cart="select first_name from sigin_up where email='{$_SESSION['userid']}' ";
 $result=mysqli_query($connect,$cart);
-          if($result){
-            
-            
+         if($result){
+                while($row = mysqli_fetch_array($result)) {
+                   $buyername = $row['first_name'] ;
+                
+                 }
                }
 
-
+ if(isset($_POST['addtocart'])){
+$submitbutton= $_POST['addtocart'];
+if ($submitbutton){
+    foreach ($data as $table) {
+    $addindb="INSERT INTO cartnum(username,prod,price) VALUES ('$buyername','{$_SESSION['bookname']}','{$_SESSION['price']}')";}
+    if (mysqli_query($connect,$addindb)){
+        echo "added";
+    }
+ }
+ }
 
 
 ?>
@@ -141,12 +155,14 @@ $result=mysqli_query($connect,$cart);
           <div class="row">
             <div class="el-wrapper">
               <div class="box-up">
-                <img class="img" src="imge/<?php echo $table['picturename']?>" alt="">
+                <img class="img" src="imge/<?php echo  $table['picturename']?>" alt="">
                 <div class="img-info">
                   <div class="info-inner">
-                    <span class="p-name"><?php echo $table['namBook'] ?></span>
+                    <span class="p-name"><?php  $_SESSION['bookname']=$table['namBook'] ;
+                        echo $_SESSION['bookname'];
+                        ?></span>
                   </div>
-                  <div class="a-size">Author : <span class="size"><?php echo $table['nameAuthor'];?></span></div>
+                  <div class="a-size">Author : <span class="size"><?php echo  $table['nameAuthor'];?></span></div>
                 </div>
               </div>
 
@@ -156,10 +172,11 @@ $result=mysqli_query($connect,$cart);
                 </div>
 
                 <a class="cart" href="#">
-                  <span class="price"><?php echo $table['price'] ?></span>
-                  <span class="add-to-cart">
-                    <span class="txt">Add in cart</span>
-                  </span>
+                  <span class="price"><?php $_SESSION['price']=$table['price'] ;
+                                   echo $_SESSION['price'];    ?></span>
+                  <form class="add-to-cart" method="post">
+                    <input class="txt" type="submit" value="Add in cart" name="addtocart" >
+                  </form>
                 </a>
               </div>
             </div>
@@ -170,7 +187,52 @@ $result=mysqli_query($connect,$cart);
 <?php  } ?>
 </div>
 </div>
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="index.php" >TankMa3lomat.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/all.js"></script>

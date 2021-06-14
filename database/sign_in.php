@@ -1,25 +1,43 @@
-<?php
+<?php   
+session_start();
  include_once 'config.php';
 
+
+//  unset($_SESSION['userid']);
  if(isset($_POST['send'])){
      $email=$_POST['email'];
      $password=SHA1($_POST['password']);
+      $_SESSION['userid'] =$email;
     if(empty($email)||empty($password)){
-
+     
     }else{
-        $sql="SELECT email,paassword FROM sigin_up WHERE email='$email' AND paassword='$password'";
+         
+        $sql="SELECT email,paassword FROM sigin_up WHERE email='{$_SESSION['userid']}' AND paassword='$password'";
         $reslt=mysqli_query($connect,$sql);
         // $row=mysqli_fetch_assoc($reslt);تخزين معلومات النتيجه
         $count=mysqli_num_rows($reslt);
         // عدد النتائج الراجعه
         if($count>0){
-            header("location: ../index.php" );
+           
+            header("location: ../member.php" );
         }else{
             echo "<h2 style='color:red;'>The password or email you entered is incorrect.</h2>";
         }
 
     }
+ }
+    
+
+if (isset($_SESSION['userid'])) {
+
+    
+    echo "variable seted to :" . $_SESSION['userid'];
+
 }
+else {
+    echo "error" ;
+}
+
 ?>
 
 <html>
