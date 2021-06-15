@@ -1,48 +1,107 @@
 <?php
 session_start();
-//echo "hello"   . $_SESSION['userid'] ;
-if(isset($_GET['id'])){
-  $id=$_GET['id'];
-}
-echo $id;
 include_once 'database/config.php';
+//echo "hello"   . $_SESSION['userid'] ;
 $sql="SELECT * FROM tablenew ";
 $reslt=mysqli_query($connect,$sql);
 while($row=mysqli_fetch_assoc($reslt)){
   $data[]=$row;
 }
 
+
 $cart="select first_name from sigin_up where email='{$_SESSION['userid']}' ";
 $result=mysqli_query($connect,$cart);
          if($result){
                 while($row = mysqli_fetch_array($result)) {
                    $buyername = $row['first_name'] ;
-                
+                   
                  }
                }
 
- if(isset($_POST['addtocart'])){
-$submitbutton= $_POST['addtocart'];
-if ($submitbutton){
-    foreach ($data as $table) {
-    $addindb="INSERT INTO cartnum(username,prod,price) VALUES ('$buyername','{$_SESSION['bookname']}','{$_SESSION['price']}')";}
+if(isset($_GET['id'])){
+  $id=$_GET['id'];
+    
+    $bookname = "select namBook from tablenew where id='$id' ";
+    $bookprice = "select price from tablenew where id='$id' ";
+     $result1=mysqli_query($connect,$bookname);
+     if($result1){
+                while($row1 = mysqli_fetch_array( $result1)) {
+                   $bookname2 = $row1['namBook'];
+                   $_SESSION['bookname'] = $bookname2  ;
+                 
+                 }
+               }
+      $result2= mysqli_query($connect,$bookprice) ;
+    if($result2){
+                while($row2 = mysqli_fetch_array( $result2)) {
+                   $bookprice2 = $row2['price'] ;
+                   $_SESSION['bookprice'] = $bookprice2 ;
+                 }
+               }
+    $addindb="INSERT INTO cartnum(username,prod,price) VALUES ('$buyername','$bookname2','$bookprice2 ')";
     if (mysqli_query($connect,$addindb)){
-        echo "added";
+        echo "";
     }
- }
+     else {
+         echo "error" ;}
  }
 
-
+$rownum="select prod from cartnum where username='$buyername' ";
+$numresult=mysqli_query($connect,$rownum);
+ $finalcartnum = mysqli_num_rows ( $numresult );
+   $_SESSION['cartn'] =  $finalcartnum;
+                
+                 
+$_SESSION['buyername']=$buyername;
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+//        export class AppComponent  {
+//
+//  public isVisible: boolean = false;
+//
+//  showAlert() : void {
+//    if (this.isVisible) { // if the alert is visible return
+//      return;
+//    } 
+//    this.isVisible = true;
+//    setTimeout(()=> this.isVisible = false,2500); // hide the alert after 2.5s
+//  }
+//
+//}
+    </script>
      <style>
          .sala{
              
              padding-right: 5%;
          }
+/*
+         .allbody{
+  position: relative;
+}
+         .alert  {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  border:1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  padding: 2rem;
+  background: #fff;
+  color: #f65656;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+  transition:  all 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(1.25rem);
+}
+         
+*/
     
     </style>
     <meta charset="UTF-8">
@@ -54,6 +113,12 @@ if ($submitbutton){
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<!--
+<div class="alert" [class.visible]="isVisible"> 
+  added to cart!
+</div>
+-->
+<div class=" allbody " >
 <div class="searsh_head ">
 <div class="container-fluid">
   <div class="row">
@@ -115,12 +180,14 @@ if ($submitbutton){
         </li> 
       </ul>
         <div class="sala">
-        <a href="cradit.php" > <img height="40px" width="50px%"  src="imge/cartpng.png"> <b> <?php // echo $num ?>   </b> </a>
+        <a href="cradit.php" > <img height="40px" width="50px%"  src="imge/cartpng.png"> <b style="text-decoration: none" > <?php  echo  '<span style="font-size: 22pt; color:black">' . $finalcartnum . '</span>';  ?>   </b> </a>
         </div>
+<!--
       <div class="log-in">
             <a href="database/sign_in.php"><button class="btn btn-primary  ">Login</button></a>
             <a href="database/sign_up.php"><button class="btn btn-primary">Register</button></a>
       </div>  
+-->
     </div>
   </div>
 </nav>
@@ -178,7 +245,7 @@ if ($submitbutton){
                   <span class="price"><?php $_SESSION['price']=$table['price'] ;
                                    echo $_SESSION['price'];    ?></span>
                   <span class="add-to-cart">
-                    <span class="txt" >Add in cart</span>
+                    <span class="txt" (click)="showAlert()" >Add in cart</span>
                   </span>
                 </a>
               </div>
@@ -190,6 +257,7 @@ if ($submitbutton){
 <?php  } ?>
 </div>
 </div>
+    </div>
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
