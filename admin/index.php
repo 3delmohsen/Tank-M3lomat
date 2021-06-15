@@ -5,7 +5,7 @@
     header("location:  login.php" );
  }
  $username=$_SESSION['asd'];
- $sql="SELECT * FROM tablenew ";
+ $sql="SELECT * FROM checkout ";
  $reslt=mysqli_query($con,$sql);
  while($row=mysqli_fetch_assoc($reslt)){
  $data[]=$row;
@@ -64,11 +64,12 @@
                        
                             <thead>
                                 <tr>
-                                    <th scope="col">Book Id.</th>
-                                    <th scope="col">Name Book</th>
-                                    <th scope="col">Name Author</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">picture</th>
+                                    <th scope="col">order_id.</th>
+                                    <th scope="col">fullname</th>
+                                    <th scope="col">address</th>
+                                    <th scope="col">city</th>
+                                    <th scope="col">state</th>
+                                    <th scope="col">zip</th>
                                 </tr>
                             </thead>
                            
@@ -79,13 +80,13 @@
                                 <tr>
                                     <th scope="row">
                                     <div class="tm-status-circle moving">
-                                         #<?php echo $table['id']?></div>
+                                         #<?php echo $table['order_id']?></div>
                                     </th>
-                                    <td><b><?php echo $table['namBook']?></b></td>
-                                    <td><b><?php echo $table['nameAuthor']?></b></td>
-                                    <td><b><?php echo $table['price']?></b></td>
-                                    <td><b><img class="img" src="../imge/<?php echo $table['picturename']?>" 
-                                    style="max-width:20%;" alt=""></b></td>
+                                    <td><b><?php echo $table['fullname']?></b></td>
+                                    <td><b><?php echo $table['address']?></b></td>
+                                    <td><b><?php echo $table['city']?></b></td>
+                                    <td><b><?php echo $table['state']?></b></td>
+                                    <td><b><?php echo $table['zip']?></td>
                                 </tr>
                                 <?php } }?>
                             </tbody>
