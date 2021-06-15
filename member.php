@@ -1,7 +1,10 @@
 <?php
 session_start();
 //echo "hello"   . $_SESSION['userid'] ;
-
+if(isset($_GET['id'])){
+  $id=$_GET['id'];
+}
+echo $id;
 include_once 'database/config.php';
 $sql="SELECT * FROM tablenew ";
 $reslt=mysqli_query($connect,$sql);
