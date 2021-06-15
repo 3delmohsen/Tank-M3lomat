@@ -1,6 +1,40 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+include_once 'database/config.php';
+
+
+if (isset($_POST['delete'])){
+    
+$del="DELETE FROM cartnum WHERE username='{$_SESSION['buyername']}' ";
+    if (mysqli_query($connect,$del)){
+        echo "";
+        
+    }
+    header("location: member.php" );
+}
+
+
+?>
+
 <html lang="en">
 <head>
+    <style>
+        .form1{
+            position: relative;
+        }
+        .form2{
+            position: absolute;
+            padding-left:55%;
+           
+        }
+        .bot{
+            padding: 8%;
+            border-style: none;
+            color: aliceblue;
+            width: 150%;
+            background-color:  #f7941d;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,21 +105,23 @@
           </ul>
         </li> 
       </ul>
+<!--
       <div class="log-in">
             <a href="database/sign_in.php"><button class="btn btn-primary  ">Login</button></a>
             <a href="database/sign_up.php"><button class="btn btn-primary">Register</button></a>
       </div>  
+-->
     </div>
   </div>
 </nav>
      
-    <center>
-     <img src="imge/out.png"  usemap="#workmap">
-    <map name="workmap">
-  <area shape="rect" coords="584,323,356,376"  href="member.php">
- 
-   </map>
+    <center class="from1" >
+     <img src="imge/out2.png"  >
     </center>
+    <form method="post" class="form2"  >
+        <input class="bot" type="submit" value="CONTINUE SHOPPING" name="delete">
+    
+    </form>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.js"></script>

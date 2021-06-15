@@ -28,15 +28,15 @@ session_start();
  }
     
 
-if (isset($_SESSION['userid'])) {
-
-    
-    echo "variable seted to :" . $_SESSION['userid'];
-
-}
-else {
-    echo "error" ;
-}
+//if (isset($_SESSION['userid'])) {
+//
+//    
+//    echo "variable seted to :" . $_SESSION['userid'];
+//
+//}
+//else {
+//    echo "error" ;
+//}
 
 ?>
 

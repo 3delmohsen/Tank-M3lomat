@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'database/config.php';
  if(isset($_POST['sub'])){
      $fullname=$_POST['firstname'];
@@ -23,11 +24,22 @@ include_once 'database/config.php';
             else{
                 echo "<p>invalid input!</p>" ;
             }
-            
-            
-            
+                    
       }
-      }   
+      } 
+
+//$query2 = "SELECT price FROM cartnum where username='{$_SESSION['buyername']}' "; 
+//     $result3 = mysqli_query($connect,$query2);
+//    while($row2 = mysqli_fetch_array($result3)){  
+//          $chechprice= $row2['price'] ; }
+    
+$total="SELECT SUM(price)  FROM cartnum where username='{$_SESSION['buyername']}' ";
+$result5=mysqli_query($connect,$total);
+     if($result5){
+         while($row5 = mysqli_fetch_array($result5)) {
+       $totalprice = $row5['SUM(price)'];
+}
+}
     ?>
 
 
@@ -103,10 +115,12 @@ include_once 'database/config.php';
           </ul>
         </li> 
       </ul>
+<!--
       <div class="log-in">
             <a href="database/sign_in.php"><button class="btn btn-primary  ">Login</button></a>
             <a href="database/sign_up.php"><button class="btn btn-primary">Register</button></a>
       </div>  
+-->
     </div>
   </div>
 </nav>
@@ -177,13 +191,15 @@ include_once 'database/config.php';
   </div>
   <div class="col-25">
     <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b><?php echo $_SESSION['cartn'];  ?> </b></span></h4>
+      <p> <?php $query = "SELECT prod,price FROM cartnum where username='{$_SESSION['buyername']}' "; 
+     $result = mysqli_query($connect,$query);
+    while($row = mysqli_fetch_array($result)){  
+    echo "<tr><td>" . $row['prod']. "______________". "<b>$</b>" .$row['price'] . "</td><td><br>" ; }  ?>
+         
+      
       <hr>
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+      <p>Total <span class="price" style="color:black"><b><?php echo  $totalprice ;  ?></b></span></p>
     </div>
   </div>
 </div>  
