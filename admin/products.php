@@ -60,7 +60,7 @@
                     <th scope="row"><input type="checkbox" /></th>
                     <td class="tm-product-name"><?php echo $table['namBook'] ?></td>
                     <td><?php echo $table['nameAuthor']?></td>
-                    <td><?php echo $table['price'] ?></td>
+                    <td>$<?php echo $table['price'] ?></td>
                     <td>
                      
                       <a href="delete.php?id=<?php echo $table['id']  ?>" class="tm-product-delete-link">

@@ -37,13 +37,15 @@ if(isset($_GET['id'])){
                    $bookprice2 = $row2['price'] ;
                    $_SESSION['bookprice'] = $bookprice2 ;
                  }
+               }else{
+                 echo "erore";
                }
-    $addindb="INSERT INTO cartnum(username,prod,price) VALUES ('$buyername','$bookname2','$bookprice2 ')";
+    $addindb="INSERT INTO cartnum(username,prod,price) VALUES ('$buyername','$bookname2','$bookprice2')";
     if (mysqli_query($connect,$addindb)){
         echo "";
     }
-     else {
-         echo "error" ;}
+    else {
+        echo "error" ;}
  }
 
 $rownum="select prod from cartnum where username='$buyername' ";
@@ -240,10 +242,9 @@ $_SESSION['buyername']=$buyername;
                 <div class="h-bg">
                   <div class="h-bg-inner"></div>
                 </div>
-
                 <a class="cart" href="?id=<?php echo $table['id'] ?>">
-                  <span class="price"><?php $_SESSION['price']=$table['price'] ;
-                                   echo $_SESSION['price'];    ?></span>
+                  <span class="price">$<?php $_SESSION['price']=$table['price'] ;
+                   echo $_SESSION['price'];    ?></span>
                   <span class="add-to-cart">
                     <span class="txt" (click)="showAlert()" >Add in cart</span>
                   </span>

@@ -135,7 +135,7 @@ while($row=mysqli_fetch_assoc($reslt)){
                 </div>
 
                 <a class="cart" href="database/sign_in.php">
-                  <span class="price"><?php echo $table['price'] ?></span>
+                  <span class="price">$<?php echo $table['price'] ?></span>
                   <span class="add-to-cart">
                     <span class="txt" >Add in cart</span>
                   </span>

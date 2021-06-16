@@ -15,7 +15,7 @@ include_once 'database/config.php';
       }
         else{
             
-             $sql="INSERT INTO checkout(fullname,email,address,city,state,zip) VALUES ('$fullname','$email','$address','$city','$state','$zip')";
+          $sql="INSERT INTO checkout(fullname,email,address,city,state,zip,username) VALUES ('$fullname','$email','$address','$city','$state','$zip','{$_SESSION['buyername']}')";
           $result=mysqli_query($connect,$sql);
           if($result){
             
@@ -192,7 +192,8 @@ $result5=mysqli_query($connect,$total);
   <div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b><?php echo $_SESSION['cartn'];  ?> </b></span></h4>
-      <p> <?php $query = "SELECT prod,price FROM cartnum where username='{$_SESSION['buyername']}' "; 
+      <p> <?php 
+      $query = "SELECT prod,price FROM cartnum where username='{$_SESSION['buyername']}' "; 
      $result = mysqli_query($connect,$query);
     while($row = mysqli_fetch_array($result)){  
     echo "<tr><td>" . $row['prod']. "______________". "<b>$</b>" .$row['price'] . "</td><td><br>" ; }  ?>

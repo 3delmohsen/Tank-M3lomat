@@ -10,7 +10,7 @@
  while($row=mysqli_fetch_assoc($reslt)){
  $data[]=$row;
 }
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,6 +70,7 @@
                                     <th scope="col">city</th>
                                     <th scope="col">state</th>
                                     <th scope="col">zip</th>
+                                    <th scope="col">user name</th>
                                 </tr>
                             </thead>
                            
@@ -87,6 +88,7 @@
                                     <td><b><?php echo $table['city']?></b></td>
                                     <td><b><?php echo $table['state']?></b></td>
                                     <td><b><?php echo $table['zip']?></td>
+                                    <td><b><?php echo $table['username']?></td>
                                 </tr>
                                 <?php } }?>
                             </tbody>
